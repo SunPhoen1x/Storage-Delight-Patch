@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "storagedelight-patch",
+	"version": "${version}",
+	"name": "StorageDelight Patch",
+	"description": "A Polymer Patch mod for Storage Delight.",
+	"authors": [
+		"Sun_Phoen1x"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/storagedelight-patch/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.phoen1x.impl.StorageDelightPatch"
+		]
+	},
+	"mixins": [
+		"storagedelight-patch.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.21.8",
+		"java": ">=21",
+		"fabric-api": "*",
+		"polymer-core": ">=0.13.3",
+		"polymer-resource-pack": ">=0.13.3",
+		"polymer-virtual-entity": ">=0.13.3"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

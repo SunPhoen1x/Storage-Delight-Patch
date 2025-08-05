@@ -1,0 +1,16 @@
+{
+	"required": true,
+	"package": "com.phoen1x.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"StorageDelightBlockEntityTypesMixin",
+		"StorageDelightBlockRegistryMixin",
+		"StorageDelightCreativeTabRegistryMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}
