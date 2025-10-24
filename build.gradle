@@ -16,7 +16,6 @@ repositories {
 }
 
 dependencies {
-	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
@@ -28,7 +27,7 @@ dependencies {
 	modImplementation ("eu.pb4:polymer-autohost:${polymer_version}")
 	modImplementation ("eu.pb4:polymer-resource-pack-extras:[${polymer_version}]")
 	modImplementation include ("eu.pb4:factorytools:[${factorytools_version}]")
-	modCompileOnly 'maven.modrinth:storage-delight:GDoFlyjV'
+	modCompileOnly ("maven.modrinth:storage-delight:[${storagedelight_version}]")
 }
 
 processResources {
