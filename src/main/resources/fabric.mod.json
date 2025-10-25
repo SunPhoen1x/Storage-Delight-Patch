@@ -7,16 +7,12 @@
 	"authors": [
 		"Sun_Phoen1x"
 	],
-	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
-	},
 	"license": "MIT",
 	"icon": "assets/storagedelight-patch/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.phoen1x.impl.StorageDelightPatch"
+			"com.phoen1x.impl.storagedelight.StorageDelightPatch"
 		]
 	},
 	"mixins": [
@@ -24,7 +20,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.16.14",
-		"minecraft": "~1.21.8",
+		"minecraft": "~1.21.6",
 		"java": ">=21",
 		"fabric-api": "*",
 		"polymer-core": ">=0.13.3",

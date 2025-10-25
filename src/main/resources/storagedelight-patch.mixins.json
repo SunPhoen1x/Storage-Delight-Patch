@@ -1,11 +1,11 @@
 {
 	"required": true,
-	"package": "com.phoen1x.mixin",
+	"package": "com.phoen1x.storagedelight.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"StorageDelightBlockEntityTypesMixin",
-		"StorageDelightBlockRegistryMixin",
-		"StorageDelightCreativeTabRegistryMixin"
+		"register.StorageDelightBlockEntityTypesMixin",
+		"register.StorageDelightBlockRegistryMixin",
+		"register.StorageDelightCreativeTabRegistryMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

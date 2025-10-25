@@ -1,16 +1,15 @@
-package com.phoen1x.mixin;
+package com.phoen1x.storagedelight.mixin.register;
 
 import com.axperty.storagedelight.StorageDelight;
 import com.axperty.storagedelight.registry.BlockRegistry;
-import com.phoen1x.impl.block.SDFactoryBlock;
-import com.phoen1x.impl.block.SDModel;
-import com.phoen1x.impl.item.StorageDelightPolyBaseItem;
+import com.phoen1x.storagedelight.impl.register.PolyItem;
+import com.phoen1x.storagedelight.impl.register.PolyBlock;
 import eu.pb4.factorytools.api.block.model.generic.BlockStateModelManager;
+import eu.pb4.polymer.blocks.api.BlockModelType;
 import eu.pb4.polymer.core.api.block.PolymerBlock;
 import eu.pb4.polymer.core.api.item.PolymerItem;
 import eu.pb4.polymer.virtualentity.api.BlockWithElementHolder;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.Mixin;
@@ -30,7 +29,7 @@ public class StorageDelightBlockRegistryMixin {
 
     @Inject(method = "registerItem", at = @At("TAIL"))
     private static void polymerifyItem(String path, Function<Item.Settings, Item> factory, Item.Settings settings, CallbackInfoReturnable<Item> cir) {
-        PolymerItem polymerItem = new StorageDelightPolyBaseItem(cir.getReturnValue());
+        PolymerItem polymerItem = new PolyItem(cir.getReturnValue());
         PolymerItem.registerOverlay(cir.getReturnValue(), polymerItem);
     }
 
@@ -39,20 +38,9 @@ public class StorageDelightBlockRegistryMixin {
         Identifier blockId = Identifier.of(StorageDelight.MOD_ID, path);
         BlockStateModelManager.addBlock(blockId, block);
 
-        PolymerBlock overlay = null;
-        if (path.endsWith("_drawer") || path.endsWith("_drawer_with_door") || path.endsWith("_drawer_with_books") ||
-                path.endsWith("_cabinet") || path.endsWith("_cabinet_with_glass_doors") || path.endsWith("_single_door_cabinet") ||
-                path.endsWith("_bookshelf_with_door") || path.startsWith("small_")) {
-
-            overlay = new SDFactoryBlock(
-                    Blocks.BARRIER.getDefaultState(),
-                    false,
-                    (state, world, pos) -> new SDModel(state, world, pos, "block/" + path)
-            );
-        }
+        PolymerBlock overlay = PolyBlock.of(block, BlockModelType.FULL_BLOCK);
 
         PolymerBlock.registerOverlay(block, overlay);
-
         if (overlay instanceof BlockWithElementHolder blockWithElementHolder) {
             BlockWithElementHolder.registerOverlay(block, blockWithElementHolder);
         }

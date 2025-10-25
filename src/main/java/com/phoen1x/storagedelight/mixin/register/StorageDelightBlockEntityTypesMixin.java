@@ -1,4 +1,4 @@
-package com.phoen1x.mixin;
+package com.phoen1x.storagedelight.mixin.register;
 
 import com.axperty.storagedelight.registry.BlockEntityTypesRegistry;
 import eu.pb4.polymer.core.api.block.PolymerBlockUtils;

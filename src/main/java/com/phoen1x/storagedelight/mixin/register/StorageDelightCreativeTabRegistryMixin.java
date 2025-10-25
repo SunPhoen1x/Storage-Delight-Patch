@@ -1,4 +1,4 @@
-package com.phoen1x.mixin;
+package com.phoen1x.storagedelight.mixin.register;
 
 import com.axperty.storagedelight.registry.CreativeTabRegistry;
 import eu.pb4.polymer.core.api.item.PolymerItemGroupUtils;

@@ -1,4 +1,4 @@
-package com.phoen1x.impl.item;
+package com.phoen1x.storagedelight.impl.register;
 
 import eu.pb4.polymer.core.api.item.PolymerItem;
 import net.minecraft.block.BlockState;
@@ -13,7 +13,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import xyz.nucleoid.packettweaker.PacketContext;
 
-public record StorageDelightPolyBaseItem(Item item) implements PolymerItem {
+public record PolyItem(Item item) implements PolymerItem {
     @Override
     public Item getPolymerItem(ItemStack itemStack, PacketContext packetContext) {
         return Items.TRIAL_KEY;
