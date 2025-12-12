@@ -3,7 +3,7 @@
 	"package": "com.phoen1x.storagedelight.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"register.StorageDelightBlockEntityTypesMixin",
+		"register.StorageDelightEntityTypesMixin",
 		"register.StorageDelightBlockRegistryMixin",
 		"register.StorageDelightCreativeTabRegistryMixin"
 	],
